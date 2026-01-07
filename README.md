@@ -1,54 +1,71 @@
 # evaluation-js-planning
 
-Planning Hebdomadaire
-Description
+# Planning Hebdomadaire
 
-Ce projet est une application web simple permettant de gérer un planning hebdomadaire interactif.
-L'utilisateur peut visualiser les jours de la semaine (du lundi au vendredi) avec leur statut (libre ou réservé),
-et interagir avec le planning pour modifier les réservations.
+## Description
 
-Fonctionnalités
+Cette application web permet de gérer un planning hebdomadaire interactif.  
+Les jours de la semaine (du lundi au vendredi) sont affichés avec leur statut (libre ou réservé).  
+L'utilisateur peut modifier les statuts, calculer le nombre de réservations, réinitialiser ou réserver aléatoirement.
 
-Affichage dynamique d’un tableau représentant les jours de la semaine (lundi à vendredi)
+---
 
-Statut des jours : libre (vert) ou réservé (rouge)
+## Fonctionnalités
 
-Clic sur une cellule de statut pour basculer entre réservé/libre
+- Tableau affichant les jours de la semaine (Lundi à Vendredi)  
+- Statut des jours : **libre** (vert) ou **réservé** (rouge)  
+- Clic sur une cellule pour basculer entre libre/réservé  
+- Bouton **Calculer** : affiche le nombre de jours libres et réservés  
+- Bouton **Réinitialiser** : remet tous les jours à libre  
+- Bouton **Réservation aléatoire** : réserve aléatoirement un nombre donné de jours  
 
-Bouton Calculer : affiche le nombre de jours libres et réservés
+---
 
-Bouton Réinitialiser : remet tous les jours à libre
+## Structure du projet
 
-Bouton Réservation aléatoire : réserve aléatoirement un nombre donné de jours
+- `index.html` : page principale HTML  
+- `script.js` : script JavaScript qui crée le tableau et gère les interactions  
 
-Interface stylée directement via JavaScript (polices, couleurs, marges…)
+---
 
-Structure du projet
+## Installation et utilisation
 
-index.html : page HTML principale, contient la structure basique et une div avec id app
+1. Cloner ou télécharger le projet  
+2. Ouvrir `index.html` dans un navigateur moderne  
+3. Interagir avec le planning en cliquant sur les jours ou les boutons  
 
-script.js : script JavaScript qui génère dynamiquement le tableau, gère les événements et le style
+---
 
-(Optionnel) style.css : si souhaité, styles supplémentaires peuvent être ajoutés
+## Exemple de code JavaScript
 
-Installation et utilisation
+```javascript
+const planningJours = [
+  { jour: "Lundi", statut: false },
+  { jour: "Mardi", statut: false },
+  { jour: "Mercredi", statut: false },
+  { jour: "Jeudi", statut: false },
+  { jour: "Vendredi", statut: false }
+];
 
-Copier les fichiers dans un dossier accessible via un serveur web ou ouvrir directement index.html dans un navigateur moderne.
-
-La page affiche automatiquement le planning hebdomadaire avec boutons d’action.
-
-Cliquer sur les cellules de statut pour changer l’état d’un jour (libre/réservé).
-
-Utiliser les boutons pour calculer le nombre de réservations, réinitialiser ou faire une réservation aléatoire.
-
-Exemple d’utilisation
-
-Cliquer sur Réservation aléatoire et entrer un nombre pour réserver ce nombre de jours au hasard.
-
-Cliquer sur Calculer pour afficher un résumé des jours libres et réservés.
-
-Cliquer sur une case rouge ou verte dans le tableau pour basculer le statut.
-
+function genererTableau() {
+  // Supprime les lignes existantes
+  while (tableau.rows.length > 0) {
+    tableau.deleteRow(0);
+  }
+  // Crée les lignes avec gestion des statuts
+  for (const jour of planningJours) {
+    const ligne = document.createElement("tr");
+    // ...
+    const celluleStatut = document.createElement("td");
+    celluleStatut.textContent = jour.statut ? "réservé" : "libre";
+    celluleStatut.style.backgroundColor = jour.statut ? "red" : "green";
+    celluleStatut.addEventListener("click", () => {
+      jour.statut = !jour.statut;
+      genererTableau();
+    });
+    // ...
+  }
+}
 
 Auteur
 
