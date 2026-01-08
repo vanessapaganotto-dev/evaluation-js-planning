@@ -67,10 +67,10 @@ function genererTableau() {
   }
 }
 
-Auteur
+## Auteur
 
 Vanessa PAGANOTTO (exemple)
 
-Licence
+## Licence
 
 Ce projet est sous licence MIT.
