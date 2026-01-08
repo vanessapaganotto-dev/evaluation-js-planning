@@ -71,7 +71,7 @@ function genererTableau() {
 ---
 
 ### Auteur  
-Vanessa PAGANOTTO (exemple)  
+Vanessa PAGANOTTO 
 
 ### Licence  
 Ce projet est sous licence MIT.
