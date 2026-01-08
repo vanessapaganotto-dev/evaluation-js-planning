@@ -66,7 +66,7 @@ function genererTableau() {
     // ...
   }
 }
-
+```
 ---
 
 ### Auteur  
