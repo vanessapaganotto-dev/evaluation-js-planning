@@ -1,5 +1,3 @@
-# evaluation-js-planning
-
 # Planning Hebdomadaire
 
 ## Description
