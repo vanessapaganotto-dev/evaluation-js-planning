@@ -67,6 +67,8 @@ function genererTableau() {
   }
 }
 
+---
+
 ## Auteur
 
 Vanessa PAGANOTTO (exemple)
